@@ -1,0 +1,584 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/contrats.css">
+    <link rel="stylesheet" href="../CSS/css_reset.css">
+    <link rel="shortcut icon" href="../IMG/Icons/Logo-ico.svg" type="image/x-icon">
+    <script src="../JS/function.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>></script>
+    
+    <title>Mes contrats</title>
+</head>
+<body>
+    <section class="container">
+    <!-- Side navigation -->
+        <section class="sidenav">
+            <div class="top">
+                <img id="logo_green" src="../IMG/Icons/Logo.svg">
+                <a href="#"><div class="img_tab_bord"></div>Tableau de bord</a>
+                <a href="#"><div class="img_tab_affaires"></div>Affaires</a>
+                <a href="#" class="active_onglet"><div class="img_tab_contrats"></div>Contrats</a>
+                <a href="#"><div class="img_tab_fournisseurs"></div>Fournisseurs</a>
+            </div>
+            <div class="bottom">
+                <a href="#"><img src="../IMG/Icons/Settings/Interface essential/Style=Outlined.svg" alt="">Paramètres</a>
+                <a href="#"><img src="../IMG/Icons/Profil/User/Style=Outlined.svg" alt="">Erwan Desrues</a>               
+            </div>
+        </section>
+    <!-- Page content -->
+        <section class="main">
+            <section class="header">
+                <h1>Mes contrats</h1>
+                <a href="#" >
+                    <button class="bouton_contrat" id="myBtn">
+                        <div class="btn_ajout_contrat"></div>
+                        <label for="">Ajouter un contrat</label>
+                    </button>
+                </a>
+            </section>
+
+
+
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>Nouveau contrat</h1>
+                <p>Ajouter un contrat dans votre portefeille</p>
+                <div class="champs">
+                    <div>
+                        <p>Nom du contrat</p>
+                        <input type="text" placeholder="Nom du contrat">
+                    </div>
+                    <div>
+                        <p>Affaire associé</p>
+                        <select name="affaires" class="affaires_associées" placeholder="Filtre par score">                                                                 
+                            <option value="option_1">56123</option>
+                            <option value="option_2">65423</option>
+                            <option value="option_3">78215</option>
+                            <option value="option_4">97820</option>
+                            <option value="option_5">97253</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p>Fournisseurs associés</p>
+                        <select name="affaires" class="affaires_associées" placeholder="Filtre par score">                                                                 
+                            <option value="entreprise_1">Acme Corporation</option>
+                            <option value="entreprise_2">Globex Corporation</option>
+                            <option value="entreprise_3">Wayne Enterprises</option>
+                            <option value="entreprise_4">LexCorp</option>
+                            <option value="entreprise_5">Stark Industries</option>
+                        </select>
+                    </div>
+                    <button id="création_nouveau_contrat">
+                        Création d'un nouveau contrat
+                    </button>
+
+                </div>
+              </div>
+            </div>
+            
+
+
+
+
+            <section class="tab">
+                <div class="w3-bar-w3-black">
+                    <div class="btn_container">
+                        <button class="w3-bar-item w3-button tablinks" onclick="openCity('tab_1')">Tous les contrats</button>
+                        <button class="w3-bar-item w3-button tablinks" onclick="openCity('tab_2')">Les contrats en attente de scoring</button>
+                        <button class="w3-bar-item w3-button tablinks" onclick="openCity('tab_3')">Dernières comparaisons</button>
+                    </div>
+                </div>  
+
+                <section id="tab_1" class="city">
+                                       
+                    <div class="cadre_contrats">                        
+                        <table border="0">
+                            <tr>
+                                <td><div class="img_contrat"></div></td>
+                                <td><h3>21 contrats</h3></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Colonne unique résultant de la fusion</td>
+                            </tr>
+                        </table> 
+                    </div>
+
+                    <a href="#">Déselectionner tous les contrats</a>
+
+                    <div class="tableau_complexe">
+                        <div class="header_tableau">
+                            <div class="header_tableau_sub_1">
+                                <h2>Les affaires scorées</h2>  
+                            </div>
+                            <div class="header_tableau_sub_2">
+                                
+                                <select name="affaires" id="affaires_select" placeholder="Filtre par score">                                                                 
+                                    <option value="option_1">Score 1</option>
+                                    <option value="option_2">Score 2</option>
+                                    <option value="option_3">Score 3</option>
+                                    <option value="option_4">Score 4</option>
+                                    <option value="option_5">Score 5</option>
+                                </select>
+                                <input type="text" placeholder="Rechercher">
+                                <button class="btn_exporter">Exporter</button>
+                            </div>                        
+                        </div>
+                        <div class="tableau_scores">
+                            <table>
+                                <tr>
+                                    <th><input type="checkbox" id="select-all"></th>
+                                    <th>N° de contrat</th>
+                                    <th>Fournisseur</th>
+                                    <th>Date de fin</th>
+                                    <th>Fournisseur</th>
+                                    <th>Statut</th>
+                                    <th>Priorité</th>
+                                    <th>Visualiser</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>12345</td>
+                                    <td>ABC Inc.</td>
+                                    <td>2024-05-15</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Actif</td>
+                                    <td><progress class="basse" max="100" value="10">10%</progress> 10%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>23456</td>
+                                    <td>DEF Ltd.</td>
+                                    <td>2024-06-30</td>
+                                    <td>LMN Co.</td>
+                                    <td>Actif</td>
+                                    <td><progress class="moyen" id="moyen" max="100" value="50">50%</progress> 50%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>34567</td>
+                                    <td>GHI SA</td>
+                                    <td>2024-07-20</td>
+                                    <td>OPQ GmbH</td>
+                                    <td>En attente</td>
+                                    <td><progress class="haute" id="file" max="100" value="70">70%</progress> 70%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>45678</td>
+                                    <td>JKL Co.</td>
+                                    <td>2024-08-10</td>
+                                    <td>RST Ltd.</td>
+                                    <td>En cours</td>
+                                    <td><progress class="haute" id="file" max="100" value="70">70%</progress> 70%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>56789</td>
+                                    <td>MNO Corp.</td>
+                                    <td>2024-09-05</td>
+                                    <td>UVW Inc.</td>
+                                    <td>En cours</td>
+                                    <td><progress class="haute" id="file" max="100" value="30">30%</progress> 30%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="60">60%</progress> 60%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="90">90%</progress> 90%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="90">90%</progress> 90%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="footer_tableau">
+                            <div class="page-indicator" id="footer_content_1">
+                                <button class="prev-btn" onclick="previousPage()">Précédent</button>
+                            </div>
+                            <div class="page-indicator" id="footer_content_2">
+                                <span class="page-dot active">1</span>
+                                <span class="page-dot">2</span>
+                                <span class="page-dot">3</span>
+                                <span class="page-dot">...</span>
+                                <span class="page-dot">8</span>
+                                <span class="page-dot">9</span>
+                                <span class="page-dot">10</span>
+                                <!-- Ajoutez autant de points que nécessaire pour représenter le nombre de pages -->
+                            </div>
+                            <div class="page-indicator" id="footer_content_3">
+                                <button class="next-btn" onclick="nextPage()">Suivant</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="conteneur_bouton_compa">
+                        <button class="bouton_comparaison_contrat">Comparer les contrats sélectionnés</button>   
+                    </div>                    
+                </section>
+                
+                <section id="tab_2" class="city" style="display:none">
+                    <div class="cadre_contrats cadre_contrat_2">                        
+                        <table border="0">
+                            <tr>
+                                <td><div class="img_alarm"></div></td>
+                                <td><h3 id="tab_2_H3">11</h3></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Contrats en attente de scoring</td>
+                            </tr>
+                        </table> 
+                    </div>
+                    
+                    <a href="#">Déselectionner tous les contrats</a>
+
+                    <div class="tableau_complexe">
+                        <div class="header_tableau">
+                            <div class="header_tableau_sub_1">
+                                <h2>Les affaires scorées</h2>  
+                            </div>
+                            <div class="header_tableau_sub_2">
+                                <select name="affaires" id="affaires_select" placeholder="Filtre par score">                              
+                                    <option value="option_1">Score 1</option>
+                                    <option value="option_2">Score 2</option>
+                                    <option value="option_3">Score 3</option>
+                                    <option value="option_4">Score 4</option>
+                                    <option value="option_5">Score 5</option>
+                                </select>
+                                <input type="text" placeholder="Rechercher">
+                                <button>Exporter</button>
+                            </div>                        
+                        </div>
+                        <div class="tableau_scores">
+                            <table>
+                                <tr>
+                                  <th><input type="checkbox" id="select-all"></th>
+                                  <th>N° de contrat</th>
+                                  <th>Fournisseur</th>
+                                  <th>Date de fin</th>
+                                  <th>Fournisseur</th>
+                                  <th>Statut</th>
+                                  <th>Priorité</th>
+                                  <th>Visualiser</th>
+                                  <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="90">90%</progress> 90%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="90">90%</progress> 90%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="90">90%</progress> 90%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="60">60%</progress> 60%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="90">90%</progress> 90%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="other-checkbox"></td>
+                                    <td>67890</td>
+                                    <td>PQR GmbH</td>
+                                    <td>2024-10-20</td>
+                                    <td>XYZ Corp.</td>
+                                    <td>Terminé</td>
+                                    <td><progress class="haute" id="file" max="100" value="30">30%</progress> 30%</td>
+                                    <td><a href="#">Voir le contrat</a></td>
+                                    <td class="conteneur_supp_modif"><a href=""><div class="modifier_contrat"></div></a> <a href=""><div class="supprimer_contrat"></div></a></td>
+                                </tr>
+                              </table>
+                              
+                        </div>
+                        <div class="footer_tableau">
+                            <div class="page-indicator" id="footer_content_1">
+                                <button class="prev-btn" onclick="previousPage()">Précédent</button>
+                            </div>
+                            <div class="page-indicator" id="footer_content_2">
+                                <span class="page-dot active">1</span>
+                                <span class="page-dot">2</span>
+                                <span class="page-dot">3</span>
+                                <span class="page-dot">...</span>
+                                <span class="page-dot">8</span>
+                                <span class="page-dot">9</span>
+                                <span class="page-dot">10</span>
+                                <!-- Ajoutez autant de points que nécessaire pour représenter le nombre de pages -->
+                            </div>
+                            <div class="page-indicator" id="footer_content_3">
+                                <button class="next-btn" onclick="nextPage()">Suivant</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="conteneur_bouton_compa">
+                        <button class="bouton_comparaison_contrat">Comparer les contrats sélectionnés</button>   
+                    </div>
+                    
+                </section>
+
+                
+                <section id="tab_3" class="city" style="display:none">
+                    <div class="tab_3_header">
+                        <h2>Les contrats comparés</h2>
+                        <div class="pastille_affaire">#340423</div>
+                        <div class="pastille_affaire">#242992</div>
+                        <div class="pastille_affaire">#310304</div>
+                    </div>
+                    <div class="comparaison_conteneur">
+                        <div class="graphique">
+                            <div class="titre_graphique">
+                                <h2>Comparaisons des différents contrats selon des critères</h2>
+                                <h3>Une comparaison qui a été réalisé le 30 mars à 8h30</h3>
+                            </div>
+                            <canvas id="myChart" style="width:100%;max-width:100%;padding-top:20px""></canvas>
+                            <script>
+                                const xValues = ['Urgence','Conformité','Complexité','Risque opérationnel','importance stratégique'];
+    
+                                new Chart("myChart", {
+                                type: "line",
+                                data: {
+                                    labels: xValues,
+                                    datasets: [{
+                                    label:"Contrat #2100",     
+                                    data: [12,10,8,5,2],
+                                    borderColor: "orange",
+                                    fill: false
+                                    }, { 
+                                    label:"Contrat #2100",       
+                                    data: [25,18,15,16,10],
+                                    borderColor: "green",
+                                    fill: false
+                                    }, {
+                                    label:"Contrat #2100",   
+                                    data: [10,15,20,20,24],
+                                    borderColor: "blue",
+                                    fill: false
+                                    }]
+                                },
+                                options: {
+                                    legend: {
+                                        display: true,
+                                        position: 'bottom', // Position de la légende (top, bottom, left, right)
+                                        labels: {
+                                            fontColor: 'black', // Couleur du texte de la légende
+                                            fontSize: 14, // Taille de la police de la légende
+                                            fontStyle: 'italic', // Style de la police de la légende (normal, italic, oblique)
+                                            pointStyle: 'circle',
+                                        }
+                                    }
+                                }
+                                });
+                            </script>
+                        </div>
+                        <div class="aides">
+                            <h2>Aides à la prise de décisions</h2>
+                            <div class="bloc_aides">
+                                <div class="item_bloc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae veniam at tempora placeat cum architecto, odio, odit quidem vitae nam perspiciatis in id! Repellat iste quas quos ipsam soluta porro.</div>
+                                <div class="item_bloc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae veniam at tempora placeat cum architecto, odio, odit quidem vitae nam perspiciatis in id! Repellat iste quas quos ipsam soluta porro.</div>
+                                <div class="item_bloc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae veniam at tempora placeat cum architecto, odio, odit quidem vitae nam perspiciatis in id! Repellat iste quas quos ipsam soluta porro.</div>
+                                <div class="item_bloc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae veniam at tempora placeat cum architecto, odio, odit quidem vitae nam perspiciatis in id! Repellat iste quas quos ipsam soluta porro.</div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>    
+                    
+
+
+
+                </section>
+            
+
+                <script>
+                    function openCity(cityName) {
+                    var i;
+                    var x = document.getElementsByClassName("city");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    
+                    }
+
+                    // Obtenez tous les boutons avec la classe "tablinks"
+                    var tabButtons = document.querySelectorAll('.tablinks');
+
+                    // Parcourez chaque bouton et ajoutez un écouteur d'événements de clic
+                    tabButtons.forEach(function(button) {
+                        button.addEventListener('click', function() {
+                            // Supprimez la classe "active" de tous les boutons
+                            tabButtons.forEach(function(btn) {
+                                btn.classList.remove('active');
+                            });
+                            // Ajoutez la classe "active" uniquement au bouton cliqué
+                            button.classList.add('active');
+                        });
+                    });
+                    
+                    var selectAllCheckbox = document.getElementById('select-all');
+
+                    // Sélectionnez toutes les autres checkboxes
+                    var otherCheckboxes = document.querySelectorAll('.other-checkbox');
+
+                    // Ajoutez un écouteur d'événements de changement à la checkbox principale
+                    selectAllCheckbox.addEventListener('change', function() {
+                        // Parcourez toutes les autres checkboxes
+                        otherCheckboxes.forEach(function(checkbox) {
+                            // Cochez ou décochez les autres checkboxes en fonction de l'état de la checkbox principale
+                            checkbox.checked = selectAllCheckbox.checked;
+                        });
+                    });
+
+                    // Ajoutez un écouteur d'événements de changement à toutes les autres checkboxes
+                    otherCheckboxes.forEach(function(checkbox) {
+                        checkbox.addEventListener('change', function() {
+                            // Vérifiez si toutes les autres checkboxes sont cochées
+                            var allChecked = true;
+                            otherCheckboxes.forEach(function(checkbox) {
+                                if (!checkbox.checked) {
+                                    allChecked = false;
+                                }
+                            });
+                            // Cochez ou décochez la checkbox principale en fonction de l'état de toutes les autres checkboxes
+                            selectAllCheckbox.checked = allChecked;
+                        });
+                    });
+
+                    // Sélectionnez tous les points de l'indicateur de page
+                    var pageDots = document.querySelectorAll('.page-dot');
+
+                    // Ajoutez un écouteur d'événements de clic à chaque point
+                    pageDots.forEach(function(dot, index) {
+                        dot.addEventListener('click', function() {
+                            // Supprimez la classe "active" de tous les points
+                            pageDots.forEach(function(dot) {
+                                dot.classList.remove('active');
+                            });
+                            // Ajoutez la classe "active" uniquement au point cliqué
+                            dot.classList.add('active');
+                            // Exécutez une action correspondant à la page associée au point (par exemple, changer le contenu)
+                            changerDePage(index);
+                        });
+                    });
+
+                    // Fonction pour exécuter une action en fonction de la page sélectionnée
+                    function changerDePage(pageIndex) {
+                        console.log('Changement de page vers la page', pageIndex + 1);
+                        // Ajoutez ici le code pour changer le contenu ou effectuer d'autres actions en fonction de la page sélectionnée
+                    }
+                    // Définir l'index de la page actuelle
+                    let currentPageIndex = 0;
+
+                    // Fonction pour passer à la page précédente
+                    function previousPage() {
+                        if (currentPageIndex > 0) {
+                            currentPageIndex--;
+                            updatePageIndicator();
+                            // Exécuter des actions spécifiques à la page précédente
+                            console.log('Page précédente');
+                        }
+                    }
+
+                    // Fonction pour passer à la page suivante
+                    function nextPage() {
+                        if (currentPageIndex < pageDots.length - 1) {
+                            currentPageIndex++;
+                            updatePageIndicator();
+                            // Exécuter des actions spécifiques à la page suivante
+                            console.log('Page suivante');
+                        }
+                    }
+
+                    // Fonction pour mettre à jour l'indicateur de page en fonction de l'index de la page actuelle
+                    function updatePageIndicator() {
+                        // Supprimer la classe "active" de tous les points
+                        pageDots.forEach(function(dot) {
+                            dot.classList.remove('active');
+                        });
+                        // Ajouter la classe "active" uniquement au point de la page actuelle
+                        pageDots[currentPageIndex].classList.add('active');
+                    }
+                    
+                </script>
+            </section>  
+        </section>
+    </section>
+</body>
+</html>

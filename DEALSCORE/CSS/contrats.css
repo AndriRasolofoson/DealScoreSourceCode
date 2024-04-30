@@ -1,0 +1,826 @@
+@charset "UTF-8";
+@import url(../CSS/couleurs.scss);
+@import url(../CSS/css_reset.scss);
+@import url(../CSS/variables.scss);
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  background-color: #FBFBFB;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  text-align: left;
+}
+
+p, table {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 400px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #ffffff; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  border-right: 1px solid #818181;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  /* The navigation menu links */
+}
+.sidenav a {
+  align-items: center;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+  justify-content: left;
+  width: 80%;
+  height: 40px;
+  border-radius: 50px;
+  margin: 10px;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+  font-size: large;
+  cursor: pointer;
+}
+.sidenav #logo_green {
+  width: 80%;
+  margin: 35px;
+}
+
+.img_tab_bord {
+  background-image: url("../IMG/Icons/Layout/Style=Outlined.svg");
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img_tab_bord:hover {
+  background-image: url("../IMG/Icons/Layout/Style=Filled.svg");
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img_tab_affaires {
+  background-image: url("../IMG/Icons/Folder/Style=Outlined.svg");
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img_tab_affaires:hover {
+  background-image: url("../IMG/Icons/Folder/Style=Filled.svg");
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img_tab_contrats {
+  background-image: url("../IMG/Icons/Folder/Style=Filled 2.svg");
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img_tab_contrats:hover {
+  background-image: url("../IMG/Icons/Folder/Style=Filled 2.svg");
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img_tab_fournisseurs {
+  background-image: url("../IMG/Icons/Folder/Style=Outlined 3.svg");
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img_tab_fournisseurs:hover {
+  background-image: url("../IMG/Icons/Folder/Style=Filled 3.svg");
+  width: 80px;
+  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.top {
+  width: 100%;
+}
+
+.bottom {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.active_onglet a {
+  width: 100%;
+  font-weight: bold;
+  background-color: #EAEAEA;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  font-weight: bold;
+  background-color: #EAEAEA;
+}
+
+.sidenav img {
+  margin: 10px;
+}
+
+/* Style page content */
+.main {
+  width: auto;
+  height: auto;
+  margin-top: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 312px;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  justify-items: center;
+  justify-self: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5vh;
+}
+
+.btn_ajout_contrat {
+  width: 30px;
+  height: 30px;
+  background-image: url("../IMG/Icons/Interface essential/Style=Style3.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.bouton_contrat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: #21652C;
+  width: 250px;
+  height: 50px;
+  border-radius: 40px;
+  color: #ffffff;
+  border: none;
+}
+
+.bouton_contrat:hover {
+  background-color: #135a20;
+}
+
+.bouton_contrat img {
+  margin: 10px;
+  fill: #ffffff;
+  color: #ffffff;
+}
+
+.bouton_contrat a {
+  margin: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.w3-bar-w3-black {
+  border-bottom: 1px solid #000000;
+}
+
+.btn_container {
+  display: flex;
+  width: 80%;
+}
+
+.w3-bar-item {
+  background-color: #FBFBFB;
+}
+
+.w3-bar-w3-black button {
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.cadre_contrats {
+  background-color: #EAEAEA;
+  width: 500px;
+  height: 250px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.cadre_contrats:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  border: 1px black;
+}
+
+.cadre_contrats table {
+  width: auto;
+  height: 50%;
+  margin-left: 50px;
+  align-content: center;
+  text-align: center;
+  text-justify: left;
+  align-items: center;
+  align-content: center;
+}
+
+.cadre_contrats table h3 {
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  margin: 0;
+  text-align: left;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.tableau_complexe {
+  margin-top: 50px;
+  background-color: #EAEAEA;
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style pour la liste déroulante */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style pour le bouton */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style pour la liste déroulante */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px;
+}
+
+/* Style pour les cases à cocher */
+.dropdown-content input[type=checkbox] {
+  margin-right: 8px;
+}
+
+/* Style pour afficher la liste déroulante */
+.show {
+  display: block;
+}
+
+.header_tableau {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.header_tableau_sub_1, .header_tableau_sub_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header_tableau select, .header_tableau input, .header_tableau button {
+  height: 50px;
+  width: 230px;
+  border-radius: 300px;
+  border: 2px solid #26963A;
+  background-color: #ffffff;
+  padding: 15px;
+  margin-left: 25px;
+}
+
+.header_tableau input {
+  background-image: url(../IMG/Icons/Style=OutlinedMargnif.svg);
+  background-repeat: no-repeat;
+  background-position: 15px 10px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 325px;
+}
+
+.header_tableau button {
+  text-align: center;
+  font-weight: lighter;
+}
+
+.tableau_scores table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 78vw;
+  border-bottom: 1px solid black;
+}
+
+.tableau_scores td, .tableau_scores th {
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.tableau_scores tr:first-child {
+  border-bottom: 1px solid black;
+}
+
+input checkbox {
+  border-radius: 20px;
+}
+
+.other-checkbox, #select-all {
+  background-color: #26963A;
+}
+
+.footer_tableau {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.page-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.page-dot {
+  width: 100%;
+  height: 10px;
+  border-radius: 10%;
+  background-color: none;
+  padding: 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-dot.active {
+  background-color: #21652C; /* Couleur de l'indicateur actif */
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.prev-btn, .next-btn {
+  background-color: white;
+  padding: 20px;
+  width: 10vw;
+  text-align: center;
+  border-radius: 40px;
+  color: #26963A;
+  border: 1px solid #26963A;
+}
+
+.conteneur_bouton_compa {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+
+.bouton_comparaison_contrat {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 50px;
+  padding: 20px;
+  background-color: #EAEAEA;
+  border: 1px solid grey;
+  cursor: pointer; /* Affiche un curseur lorsqu'il est survolé */
+}
+
+.next-btn:hover, .prev-btn:hover, .btn_exporter:hover {
+  /* Style lorsque le bouton est survolé */
+  background-color: #21652C;
+  border: 1px solid grey;
+  color: white;
+}
+
+.bouton_comparaison_contrat:hover {
+  /* Style lorsque le bouton est survolé */
+  background-color: #21652C;
+  color: white;
+}
+
+/* Désactive les événements de pointeur sur le bouton */
+.bouton_comparaison_contrat.disabled {
+  pointer-events: none;
+  opacity: 0.6; /* Optionnel : peut être utilisé pour rendre le bouton légèrement transparent */
+}
+
+.modifier_contrat {
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../IMG/Icons/modifier/Style=Outlined.svg");
+}
+
+.supprimer_contrat {
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../IMG/Icons/Delete/Style=Outlined.svg");
+}
+
+.conteneur_supp_modif {
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  display: flex;
+  margin: 5px;
+  height: 20px;
+  flex-direction: row;
+}
+
+/* Style personnalisé pour la barre de progression */
+progress[value] {
+  /* Couleur de la barre de progression */
+  background-color: #f8f8f8;
+  /* Largeur et hauteur de la barre de progression */
+  width: 4vw;
+  height: 5px;
+  /* Bordures arrondies */
+  border-radius: 10px;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: green;
+}
+
+/* Couleur de la barre de progression remplie pour valeurs entre 60 et 100 */
+progress[value="60"]::-webkit-progress-value,
+progress[value="70"]::-webkit-progress-value,
+progress[value="80"]::-webkit-progress-value {
+  background-color: orange;
+}
+
+progress[value="90"]::-webkit-progress-value,
+progress[value="100"]::-webkit-progress-value {
+  background-color: red;
+}
+
+/* Couleur de la barre de progression non remplie */
+progress[value]::-webkit-progress-bar {
+  background-color: #f8f8f8;
+}
+
+.img_contrat {
+  width: 150px;
+  height: 150px;
+  background-image: url("../IMG/Icons/Folder/Style=Filled 2.svg");
+  background-position: center;
+  background-size: 5vh;
+  background-repeat: no-repeat;
+}
+
+.img_alarm {
+  width: 150px;
+  height: 150px;
+  background-image: url("../IMG/Icons/Alarm/Interface essential/Style=Filled.svg");
+  background-position: center;
+  background-size: 5vh;
+  background-repeat: no-repeat;
+}
+
+#tab_2_H3 h3 {
+  font-weight: bolder;
+  font-size: 100px;
+  align-items: center;
+  justify-content: center;
+  text-justify: center;
+  height: 100%;
+}
+
+td {
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: none; /* Par défaut, la popup est cachée */
+  position: fixed; /* Position fixe pour rester centrée */
+  z-index: 1; /* Met la popup au-dessus de tout le reste */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+/* Style pour le contenu de la popup */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Centre la popup verticalement et horizontalement */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+/* Style pour le bouton de fermeture */
+.close {
+  color: #000000;
+  font-size: 58px;
+  font-weight: 300;
+  align-self: left;
+  margin-left: 95%;
+  border-radius: 30%;
+}
+
+.champs {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.champs p {
+  font-weight: bold;
+}
+
+.champs input {
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+.affaires_associées {
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(103, 103, 103);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#création_nouveau_contrat {
+  margin-top: 30px;
+  margin-bottom: 3vh;
+  padding: 30px;
+  text-align: center;
+  justify-content: center;
+  text-justify: center;
+  border-radius: 30px;
+  background-color: #21652C;
+  color: white;
+  border: none;
+}
+
+.comparaison_conteneur {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
+}
+
+.tab_3_header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pastille_affaire {
+  margin-left: 50px;
+  background-color: #A6D3AE;
+  border: 1px solid #26963A;
+  padding: 20px;
+  border-radius: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.graphique {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.titre_graphique {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgb(69, 69, 69);
+  background-color: white;
+  width: 100%;
+}
+
+.aides {
+  width: 30%;
+  padding: 30px;
+  margin: 25px;
+  border-radius: 10px;
+  background-color: #EAEAEA;
+  display: flex;
+  flex-direction: column;
+}
+
+.bloc_aides {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EAEAEA;
+  flex-basis: 0;
+  justify-content: center;
+  height: 100%;
+}
+
+.item_bloc {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FBFBFB;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 1px solid rgb(190, 190, 190);
+}
+
+.tablinks.active {
+  /*couleur quand c'est actif*/
+  border-bottom: 3px solid black;
+  font-size: 1, 5vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+}
+
+.login-box {
+  margin-top: 50vh;
+  width: 30%;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
+}
+
+.login-box h2 {
+  text-align: center;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.login-box input {
+  margin: 20px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  
+  
+}
+
+.login-box button{
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #D6D6D6;
+  padding: 20px;
+  color: black;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-box button a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border: 1px #818181;
+}
+
+.login-box a{
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) *//*# sourceMappingURL=contrats.css.map */
